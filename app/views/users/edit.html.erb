@@ -1,6 +1,8 @@
-<h2>User info</h2>
+<div class="body">
+  <div class="container">
+  <h2>User info</h2>
 
-<%= form_for(@user) do |f| %>
+  <%= form_for(@user) do |f| %>
 
 	<!-- エラーメッセージ表示-->
 	<% if @user.errors.any? %>
@@ -35,3 +37,5 @@
 	</div>
 
 <% end %>
+</div>
+</div>
