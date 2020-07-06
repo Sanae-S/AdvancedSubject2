@@ -56,9 +56,7 @@
 				</tr>
 			</table>
 			<div class="comment-list bt style-2" id="comments">
-              <div class="float-wrapper">
-                <h2 class="comment-count">コメント数：<%= @book.book_comments.count %></h2>
-              </div>
+              
               <ol>
                <% @book.book_comments.each do |book_comment| %>
                  <li class="comment">
