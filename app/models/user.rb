@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :book_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship", dependent: :destroy
+  has_many :followings, through: :following_relationships
   #バリデーションは該当するモデルに設定する。エラーにする条件を設定できる。
   validates :name, presence: true, length: {maximum: 20, minimum: 2}
   validates :introduction,length: { maximum: 50 }
