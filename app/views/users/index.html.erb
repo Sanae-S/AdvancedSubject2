@@ -31,9 +31,24 @@
 			<td><%= user.name %></td>
 			<td>フォロー数：<%= user.followings.count %></td>
 	        <td>フォロワー数：<%= user.followers.count %></td>
+	        <% if user != current_user %>
+	        <td>
+	        	<% if current_user.following?(user) %>
+              <%= render 'users/unfollow' ,user: user %>
+
+
+            <% else %>
+              <%= render 'users/follow' , user: user %>
+
+            <% end %>
+	        </td>
+	        <% else %>
+	        <td></td>
+	        <% end %>
 	        <td><%= link_to "Show", user_path(user), class: "user_#{user.id}" %></td>
 		</tr>
 		<% end %>
+
 	</tbody>
 </table>
 </div>
